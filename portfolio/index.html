@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adiba's Portfolio 🌸</title>
+    <!-- Importing cute fonts from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- Pink Color Palette --- */
+        :root {
+            --bg-color: #fff0f5;
+            /* Lavender Blush */
+            --text-color: #6a4c6a;
+            /* Soft dark purple/grey */
+            --accent-pink: #ffb6c1;
+            /* Light Pink */
+            --dark-pink: #ff69b4;
+            /* Hot Pink */
+            --white: #ffffff;
+        }
+
+        /* --- Global Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        .logo {
+            font-family: 'Pacifico', cursive;
+            color: var(--dark-pink);
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--dark-pink);
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: var(--accent-pink);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+        }
+
+        .logo {
+            font-size: 26px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            color: var(--text-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        .nav-links li a:hover {
+            background-color: var(--accent-pink);
+            color: var(--white);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            min-height: 70vh;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 8px solid var(--white);
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.6);
+            margin-bottom: 25px;
+            animation: float 4s ease-in-out infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        /* Cute Floating Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: var(--accent-pink);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-pink);
+            transform: scale(1.05);
+            color: var(--white);
+        }
+
+        /* --- Projects Section --- */
+        .projects-section {
+            padding: 60px 10%;
+        }
+
+        .projects-section h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--accent-pink);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: var(--bg-color);
+            color: var(--dark-pink);
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 5px 12px;
+            border-radius: 15px;
+            border: 1px solid var(--accent-pink);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--white);
+            margin-top: 50px;
+            border-top: 2px dashed var(--accent-pink);
+        }
+
+        footer p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Adiba Naushad 's Space 🎀</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <!-- You can replace the emoji below with an actual <img> tag of your photo! -->
+        <div class="profile-pic">👩🏻‍💻</div>
+
+        <h1>Hi, I'm Adiba Naushad! ✨</h1>
+        <p>B.Tech CSE student with strong knowledge of DSA, frontend development, Prompt Engineering and responsive web design.
+        Skilled in
+        scalable application design, software engineering, and modern web technologies. Experienced in building interactive user
+        interfaces and
+        optimizing performance across devices. Seeking to contribute to innovative projects in a high-growth tech environment.
+            
+            From building interactive web apps to solving logic, I bring ideas to life with code.</p>
+
+        <a href="#projects" class="btn">View My Work 👇</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <h2>My Projects 💻</h2>
+        <div class="project-grid">
+
+            <!-- Weather App -->
+             
+            <div class="project-card"  >
+                <div class="icon">⛅</div>
+                <h3>Live Weather App</h3>
+                <p>A dynamic weather application featuring live API integration, search functionality, a clean UI, and a
+                    6-day weather forecast layout.</p>
+                <div class="tags">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Axios API</span>
+                </div>
+                <br>
+                <a href="https://github.com/AdibaNaushad/shecodeweatherHost" target="_blank"> on GitHub</a> and
+                <a href="https://myweatherappshecode.netlify.app/" target="_blank">hosted on Netlify</a>
+        
+    
+            </div>
+
+            <!-- Cricket Clash Game -->
+                <div class="project-card">
+                    <a href="https://cricketclashbeatthebot.netlify.app/" target="_blank" class="invisible-card-link"></a>
+                    <div class="icon">🏏</div>
+                    <h3>Cricket Clash</h3>
+                    <p>An interactive and fun web-based game where you go head-to-head against a smart bot in a classic match of
+                        cricket.</p>
+                    <div class="tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Game Logic</span>
+                    </div>
+                    <br>
+                    <a href="https://github.com/AdibaNaushad/Cricket-Clash-Beat-the-Bot" target="_blank"> on GitHub</a> and
+                    <a href="https://cricketclashbeatthebot.netlify.app/" target="_blank">hosted on Netlify</a>
+                </div>
+       
+
+
+        
+        
+        
+            <!-- Shayari Web Project -->
+            <div class="project-card">
+                <a href="https://shayariquiz.netlify.app/" target="_blank"></a>
+                <div class="icon">📜</div>
+                <h3>Shayari Web Project</h3>
+                <p>A beautiful and expressive web platform designed to showcase poetry and Shayari with an elegant,
+                    readable front-end design.</p>
+                <div class="tags">
+                    <span class="tag">Front-End</span>
+                    <span class="tag">UI/UX</span>
+                    <span class="tag">CSS Styling</span>
+                </div>
+                <br>
+                <a href="https://github.com/AdibaNaushad/Quiz_project" target="_blank"> on GitHub</a> and
+                <a href="https://shayariquiz.netlify.app/" target="_blank">hosted on Netlify</a>
+                
+            </div>
+
+            <!-- Smart Tourist App -->
+            <div class="project-card">
+                <div class="icon">🌱</div>
+                <h3>AgriCarbonMRV</h3>
+                <p>feature ✨ is a Hindi voice assistant 🗣️ that answers farmers’ questions, making carbon markets simple, transparent &
+                profitable,blockchain-verified 🔗✅.
+                    </p>
+                <div class="tags">
+                    <span class="tag">Research</span>
+                    <span class="tag">Frontend</span>
+                    <span class="tag">Data Analysis</span>
+                </div>
+                <br>
+                <a href="https://github.com/AdibaNaushad/AgriCarbonMRV-project" target="_blank"> on GitHub</a> and
+                <a href="https://agromrv.netlify.app/" target="_blank">hosted on Netlify</a>
+            </div>
+
+            <!-- Logic & Interfaces -->
+            <div class="project-card">
+                <div class="icon">⚙️</div>
+                <h3>Logic & Interfaces</h3>
+                <p>A collection of backend and structural projects, including a C matrix algorithm, a dark/light mode
+                    To-Do list, and Java assignments.</p>
+                <div class="tags">
+                    <span class="tag">C</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">JS Logic</span>
+                </div>
+                <br>
+                <a href="https://github.com/AdibaNaushad/ToDoList" target="_blank"> on GitHub</a> and
+                <a href="https://todolistofmyown.netlify.app/" target="_blank">hosted on Netlify</a>
+            </div>
+
+            
+
+
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <p>Made with 💖 and code by ADIBA NAUSHAD.</p>
+        <p>Linkedin : https://www.linkedin.com/in/adiba-naushad/</p>
+        <p>Email : adibanaushad0@gmail.com </p>
+        <p>GitHub : https://github.com/AdibaNaushad </p>
+
+    </footer>
+
+</body>
+
+</html>
